@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f4f6;
+}
+
+#switch {
+    display: none;
+}
+
+.toggle {
+    width: 220px;
+    height: 80px;
+    background: #d1d5db;
+    border-radius: 100px;
+    padding: 10px;
+    transition: .4s;
+}
+
+.toggle-btn {
+
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s ease, background .4s ease;
+}
+
+.icon {
+    position: absolute;
+    transition: opacity .3s;
+}
+
+.lock {
+    opacity: 0;
+}
+
+#switch:checked+.toggle-btn {
+    transform: translateX(140px);
+}
+
+.toggle:has(#switch:checked) {
+    background: #2563eb;
+}
+
+#switch:checked+.toggle-btn .unlock {
+    opacity: 0;
+}
+
+#switch:checked+.toggle-btn .lock {
+    opacity: 1;
+    color: #2563eb;
+}
